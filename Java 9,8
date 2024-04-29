@@ -1,0 +1,76 @@
+public class Fan {
+    // Constants
+    static final int SLOW = 1;
+    static final int MEDIUM = 2;
+    static final int FAST = 3;
+
+    // Data fields
+    private int speed = SLOW;
+    private boolean on = false;
+    private double radius = 5;
+    private String color = "blue";
+
+    // No-arg constructor
+    public Fan() {
+        // Default constructor
+    }
+
+    // Accessor methods
+    public int getSpeed() {
+        return speed;
+    }
+
+    public boolean isOn() {
+        return on;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    // Mutator methods
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public void setOn(boolean on) {
+        this.on = on;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    // toString method
+    public String toString() {
+        if (isOn()) {
+            return "The fan is on [Speed: " + getSpeed() + ", Color: " + getColor() + ", Radius: " + getRadius() + "]";
+        } else {
+            return "The fan is off [Color: " + getColor() + ", Radius: " + getRadius() + "]";
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        Fan fan1 = new Fan();
+        Fan fan2 = new Fan();
+
+        fan1.setSpeed(Fan.FAST);
+        fan1.setRadius(10);
+        fan1.setColor("Yellow");
+        fan1.setOn(true);
+
+        fan2.setSpeed(Fan.MEDIUM);
+
+        System.out.println("Fan 1:\n" + fan1.toString());
+        System.out.println("Fan 2:\n" + fan2.toString());
+    }
+}
